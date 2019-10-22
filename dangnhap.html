@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class</title>
+    <script src="bye.js"></script>
+</head>
+<body>
+<style>
+    body{
+        background-color:  #003366;
+    }
+    .box{
+        width: 600px;
+        padding: 60px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: #00ff00;
+        text-align: center;
+    }
+</style>
+<script>
+       let arrUser = [["long2001","longdeptrai"],["123123","456456"]];
+       let login = function () {
+
+            let username = document.getElementById("user").value;
+            let password = document.getElementById("password").value;
+
+            if (username.trim() === '') {
+                alert("Please input username.");
+            } else if (password.trim() === '') {
+                alert("Please input password.");
+            } else {
+                for (let i = 0; i < arrUser[0].length; i++) {
+                    if (username === arrUser[0][i] && password === arrUser[1][i]) {
+                        alert("Welcome " + arrUser[0][i] + " login success!");
+                        return window.location = "casestudy.html";
+                    }
+                }
+                alert("Username or password is incorect.");
+
+            }
+    };
+</script>
+<form class="box">
+<h3>Please login</h3>
+User:<input type="text" id="user">  Password:<input  type="password" id="password">
+<input type="button" value="Login" onclick="login();">
+</form>
+
+</body>
+</html>
