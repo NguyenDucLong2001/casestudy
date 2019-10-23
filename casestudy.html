@@ -36,14 +36,12 @@
 <img src="4.png" height="426" width="640"/>
 <img src="3.jpg" height="426" width="640"/>
 <h3 style="color: red">The Lamborghini line :</h3>
-<table id ="productList">
-
-</table>
+<table id ="productList"></table>
 <p id="abc"></p>
 <script>
     let danhsach = ['Lamborghini Aventador SVJ\n','Lamborghini Aventador LP700-4\n','Lamborghini Aventador LP750-SV\n','Lamborghini Aventador S\n'];
     function displayProducts(){
-        let table = "<table border='1' cellspacing='0' cellpadding='10'>";
+        let table = "";
         for ( let i  = 0  ; i < danhsach.length ; i ++){
             table += '<tr>';
             table += '<td>'+ [i+1] + " "  ;
@@ -53,7 +51,6 @@
             table +=  '<td>' + '<button onclick="buy('+i+')">Buy</button>';
             table += '</tr>';
         }
-        table += '</table>';
         document.getElementById("productList").innerHTML = table;
     }
     displayProducts();
